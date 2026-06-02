@@ -1,4 +1,4 @@
-# Hi, I'm Archie 👋
+# Hi, I'm Aldous 👋
 
 💻 Computer Science Student  
 🎨 UI/UX Designer  

@@ -1,0 +1,295 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Aldous | Portfolio">
+
+<main class="hero reveal" id="home" data-bg="blue">
+
+  <div class="hero-image">
+    <img src="/images/archie.jpeg" alt="Aldous Profile" />
+  </div>
+
+  <h1>Hi, I'm <span>Aldous</span></h1>
+
+  <p>
+    Computer Science Major • Web Developer • UI/UX Designer • Video Editor • Photo Editor • Tech Enthusiast
+  </p>
+
+  <div class="buttons">
+    <a href="#projects">View Projects</a>
+    <a href="#contact">Contact Me</a>
+  </div>
+
+</main>
+
+  <section id="about" class="about reveal" data-bg="violet">
+  <div class="about-container">
+
+    <div class="about-image">
+      <img src="/images/archie.jpeg" alt="Aldous Profile" />
+    </div>
+
+    <div class="about-content">
+      <h2>About Me</h2>
+
+      <p>
+        I'm Aldous, a Computer Science student passionate about building
+        modern web applications, UI/UX designs, and multimedia content.
+      </p>
+
+      <p>
+        I enjoy creating clean, user-friendly interfaces and solving real-world
+        problems through code and design.
+      </p>
+
+      <div class="about-tags">
+        <span>Web Development</span>
+        <span>UI/UX Design</span>
+        <span>Video Editing</span>
+        <span>Photo Editing</span>
+        <span>Problem Solving</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="tech-stack reveal" data-bg="cyan">
+
+  <div class="section-header">
+    <h2>Tech Stack</h2>
+    <p>Tools and technologies I use</p>
+  </div>
+
+  <div class="tech-grid">
+
+    <img src="/icons/Astro.svg" alt="Astro" />
+    <img src="/icons/React.svg" alt="React" />
+    <img src="/icons/Firebase.svg" alt="Firebase" />
+    <img src="/icons/Python.svg" alt="Python" />
+    <img src="/icons/MySQL.svg" alt="MySQL" />
+    <img src="/icons/Node.js.svg" alt="Node.js" />
+    <img src="/icons/HTML5.svg" alt="HTML" />
+    <img src="/icons/CSS3.svg" alt="CSS" />
+    <img src="/icons/JavaScript.svg" alt="Javascript" />
+    <img src="/icons/Git.svg" alt="Git" />
+    <img src="/icons/GitHub.svg" alt="Github" />
+
+
+  </div>
+
+</section>
+
+  <section id="projects" class="projects reveal" data-bg="gray">
+  <div class="section-header">
+    <h2>Featured Projects</h2>
+    <p>Some of the things I've built</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <img src="/images/project1.png" alt="Community App" />
+
+      <div class="project-content">
+        <h3>Community App</h3>
+        <p>
+          Full-stack community platform with messaging, posts, and book borrowing system.
+        </p>
+
+        <div class="tags">
+          <span>React</span>
+          <span>Firebase</span>
+          <span>Firestore</span>
+        </div>
+
+        <div class="links">
+          <a href="#">GitHub</a>
+          <a href="#">Live Demo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="/images/project2.png" alt="Feedback System" />
+
+      <div class="project-content">
+        <h3>Feedback Board</h3>
+        <p>
+          CRUD-based feedback system for local businesses using PHP & MySQL.
+        </p>
+
+        <div class="tags">
+          <span>PHP</span>
+          <span>MySQL</span>
+          <span>JavaScript</span>
+        </div>
+
+        <div class="links">
+          <a href="#">GitHub</a>
+          <a href="#">Live Demo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <img src="/images/project3.png" alt="Gamified Learning App" />
+
+      <div class="project-content">
+        <h3>Gamified Learning App</h3>
+        <p>
+          Mobile-based learning system with rule-based progression for early education.
+        </p>
+
+        <div class="tags">
+          <span>Flutter</span>
+          <span>Firebase</span>
+          <span>Research</span>
+        </div>
+
+        <div class="links">
+          <a href="#">GitHub</a>
+          <a href="#">Case Study</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills" class="skills reveal" data-bg="deepblue">
+
+  <div class="section-header">
+    <h2>Skills & Tools</h2>
+    <p>Technologies and tools I work with</p>
+  </div>
+
+  <div class="skills-grid">
+
+    <!-- Web Dev -->
+    <div class="skill-card">
+      <h3>Web Development</h3>
+      <div class="skill-list">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>PHP</span>
+        <span>MySQL</span>
+      </div>
+    </div>
+
+    <!-- Frameworks -->
+    <div class="skill-card">
+      <h3>Frameworks</h3>
+      <div class="skill-list">
+        <span>Astro</span>
+        <span>React</span>
+        <span>Node.js</span>
+        <span>Tailwind</span>
+      </div>
+    </div>
+
+    <!-- Design -->
+    <div class="skill-card">
+      <h3>Design</h3>
+      <div class="skill-list">
+        <span>Figma</span>
+        <span>UI/UX</span>
+        <span>Photoshop</span>
+        <span>Canva</span>
+      </div>
+    </div>
+
+    <!-- Media -->
+    <div class="skill-card">
+      <h3>Media & Editing</h3>
+      <div class="skill-list">
+        <span>Premiere Pro</span>
+        <span>Final Cut Pro</span>
+        <span>DaVinci Resolve</span>
+      </div>
+    </div>
+
+    <!-- Tech -->
+    <div class="skill-card">
+      <h3>Technical Skills</h3>
+      <div class="skill-list">
+        <span>PC Building</span>
+        <span>Hardware Diagnostics</span>
+        <span>Troubleshooting</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="contact" class="contact reveal" data-bg="cyan">
+
+  <div class="section-header">
+    <h2>Contact Me</h2>
+    <p>Let’s work together or build something cool</p>
+  </div>
+
+  <div class="contact-container">
+
+    <!-- Left Info -->
+    <div class="contact-info">
+
+      <h3>Get in Touch</h3>
+
+      <p>
+        I'm open to freelance work, internships, and collaboration opportunities.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:youremail@gmail.com">📧 Email Me</a>
+        <a href="https://github.com/" target="_blank">💻 GitHub</a>
+        <a href="https://linkedin.com/" target="_blank">🔗 LinkedIn</a>
+      </div>
+
+    </div>
+
+    <!-- Contact Form -->
+    <form class="contact-form">
+
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="6" required></textarea>
+
+      <button type="submit">Send Message</button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<footer class="footer reveal">
+
+  <div class="footer-content">
+    <h3>Aldous</h3>
+
+    <p>
+      Computer Science Major • Web Developer • UI/UX Designer • Photo & Video Editor • Tech Enthusiast
+    </p>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <p class="copyright">
+      © 2026 Aldous. All rights reserved. Built with Care
+    </p>
+  </div>
+
+</footer>
+
+</BaseLayout>

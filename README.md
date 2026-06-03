@@ -41,6 +41,9 @@ Currently exploring:
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![Canva](https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white)
 ![Photoshop](https://img.shields.io/badge/Photoshop-001E36?style=for-the-badge&logo=adobephotoshop&logoColor=31A8FF)
+![DaVinci Resolve](https://img.shields.io/badge/DaVinci_Resolve-614099?style=for-the-badge&logo=davinciresolve&logoColor=white)
+![Premiere Pro](https://img.shields.io/badge/Premiere_Pro-001E36?style=for-the-badge&logo=adobepremierepro&logoColor=9999FF)
+![Final Cut Pro](https://img.shields.io/badge/Final_Cut_Pro-000000?style=for-the-badge&logo=finalcutpro&logoColor=white)
 
 ---
 

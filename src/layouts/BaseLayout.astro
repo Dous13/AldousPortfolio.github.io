@@ -62,9 +62,7 @@ const { title = "Aldous Portfolio" } = Astro.props;
           });
         });
 
-        /* =========================
-           SCROLL SPY (ACTIVE NAV)
-        ========================= */
+        /*SCROLL SPY (ACTIVE NAV)*/
         const sections = document.querySelectorAll("section, main");
 
         function setActiveSection() {
@@ -91,18 +89,14 @@ const { title = "Aldous Portfolio" } = Astro.props;
 
         window.addEventListener("scroll", setActiveSection);
 
-        /* =========================
-           NAVBAR GLASS ON SCROLL
-        ========================= */
+        /*NAVBAR GLASS ON SCROLL*/
         const navbar = document.querySelector(".navbar");
 
         window.addEventListener("scroll", () => {
           navbar?.classList.toggle("scrolled", window.scrollY > 30);
         });
 
-        /* =========================
-           CURSOR GLOW FOLLOW
-        ========================= */
+        /*CURSOR GLOW FOLLOW*/
         const glow = document.querySelector(".cursor-glow");
 
         let mouseX = 0, mouseY = 0;
@@ -124,9 +118,7 @@ const { title = "Aldous Portfolio" } = Astro.props;
 
         animate();
 
-        /* =========================
-           SECTION BACKGROUND BLENDING
-        ========================= */
+        /*SECTION BACKGROUND BLENDING*/
         const colors = {
           blue: "rgba(59, 130, 246, 0.10)",
           violet: "rgba(168, 85, 247, 0.10)",

@@ -76,13 +76,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <img src={`${import.meta.env.BASE_URL}images/JavaScript.svg`} />
    <img src={`${import.meta.env.BASE_URL}images/Git.svg`} />
     <img src={`${import.meta.env.BASE_URL}images/GitHub.svg`} />
+    <img src={`${import.meta.env.BASE_URL}images/Csharp.svg`} />
 
 
   </div>
 
 </section>
 
-  <section id="projects" class="projects reveal" data-bg="gray">
+<!--Projects Section -->
+<section id="projects" class="projects reveal" data-bg="gray">
   <div class="section-header">
     <h2>Featured Projects</h2>
     <p>Some of the things I've built</p>
@@ -215,6 +217,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   
 </section>
 
+<!--Skills Section -->
 <section id="skills" class="skills reveal" data-bg="deepblue">
 
   <div class="section-header">
@@ -282,6 +285,66 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 </section>
 
+<section id="photos" class="photos reveal" data-bg="gray">
+  <div class="section-header">
+    <h2>Photos & Hobbies</h2>
+    <p>Moments in Time</p>
+  </div>
+
+  <div class="photo-wall">
+
+    <div class="photo-card large">
+      <img src={`${import.meta.env.BASE_URL}images/sky.jpeg`} />
+      <div class="photo-info">
+        <h3>Golden Hour</h3>
+        <p>Manila skyline during sunset</p>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <img src={`${import.meta.env.BASE_URL}images/streetlight.jpeg`} />
+      <div class="photo-info">
+        <h3>Street Light</h3>
+        <p>Urban night atmosphere</p>
+      </div>
+    </div>
+
+    <div class="photo-card tall">
+      <img src={`${import.meta.env.BASE_URL}images/falls.jpg`} />
+      <div class="photo-info">
+        <h3>Minimal Nature</h3>
+        <p>Quiet forest composition</p>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <img src={`${import.meta.env.BASE_URL}images/reflections.jpeg`} />
+      <div class="photo-info">
+        <h3>Reflections</h3>
+        <p>Water + light symmetry</p>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <img src={`${import.meta.env.BASE_URL}images/dog.jpeg`} />
+      <div class="photo-info">
+        <h3>Dog</h3>
+        <p>Dog & Smile</p>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <img src={`${import.meta.env.BASE_URL}images/time.jpeg`} />
+      <div class="photo-info">
+        <h3>Time</h3>
+        <p>Time is Gold</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--Contact Section -->
 <section id="contact" class="contact reveal" data-bg="cyan">
 
   <div class="section-header">

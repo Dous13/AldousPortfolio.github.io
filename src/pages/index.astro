@@ -2,444 +2,303 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Aldous | Portfolio">
+<BaseLayout title="Aldous | Digital Portfolio">
 
-<main class="hero reveal" id="home" data-bg="blue">
-
-  <div class="hero-image">
-    <img src={`${import.meta.env.BASE_URL}images/archie.jpeg`} />
-  </div>
-
-  <h1>Hi, I'm <span>Aldous</span></h1>
-
-  <p>
-    Computer Science Major • Web Developer • UI/UX Designer • Video Editor • Photo Editor • Tech Enthusiast
-  </p>
-
-  <div class="buttons">
-    <a href="#projects">View Projects</a>
-    <a href="#contact">Contact Me</a>
-  </div>
-
-</main>
-
-  <section id="about" class="about reveal" data-bg="violet">
-  <div class="about-container">
-
-    <div class="about-image">
-      <img src={`${import.meta.env.BASE_URL}images/archie.jpeg`} />
-    </div>
-
-    <div class="about-content">
-      <h2>About Me</h2>
-
-      <p>
-        I'm Aldous, a Computer Science student passionate about building
-        modern web applications, UI/UX designs, and multimedia content.
-      </p>
-
-      <p>
-        I enjoy creating clean, user-friendly interfaces and solving real-world
-        problems through code and design.
-      </p>
-
-      <div class="about-tags">
-        <span>Web Development</span>
-        <span>UI/UX Design</span>
-        <span>Video Editing</span>
-        <span>Photo Editing</span>
-        <span>Problem Solving</span>
+  <main class="hero" id="home">
+    <div class="hero-window reveal">
+      <div class="window-bar">
+        <div class="window-controls" aria-hidden="true">
+          <span class="traffic red"></span>
+          <span class="traffic yellow"></span>
+          <span class="traffic green"></span>
+        </div>
+        <span class="window-title">Aldous — Portfolio</span>
+        <span class="window-status">● available</span>
       </div>
 
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> Computer Science Student · Dumaguete</div>
+          <h1>I build things<br /><span>with a little soul.</span></h1>
+          <p class="hero-lede">
+            I'm Aldous — a CS student who likes turning ideas into polished websites,
+            useful apps, thoughtful interfaces, and visual stories.
+          </p>
+
+          <div class="buttons">
+            <a class="primary-btn magnetic" href="#projects">Explore my work <span>↗</span></a>
+            <a class="glass-btn magnetic" href="#contact">Say hello</a>
+          </div>
+
+          <div class="hero-meta">
+            <div><strong>01</strong><span>Developer</span></div>
+            <div><strong>02</strong><span>Designer</span></div>
+            <div><strong>03</strong><span>Editor</span></div>
+          </div>
+        </div>
+
+        <div class="hero-profile">
+          <div class="profile-orbit"></div>
+          <div class="profile-card glass-panel">
+            <div class="profile-top">
+              <span>hello_world.jpg</span>
+              <span>2026</span>
+            </div>
+            <img src={`${import.meta.env.BASE_URL}images/archie.jpeg`} alt="Portrait of Aldous" />
+            <div class="profile-caption">
+              <div>
+                <strong>Aldous Necesito</strong>
+                <span>BS Computer Science</span>
+              </div>
+              <span class="mini-chip">open to opportunities</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-  </div>
-</section>
+    <div class="scroll-cue"><span></span> Scroll to explore</div>
+  </main>
 
-<section class="tech-stack reveal" data-bg="cyan">
+  <section id="about" class="section about reveal">
+    <div class="section-intro">
+      <span class="section-number">01 / ABOUT</span>
+      <h2>A portfolio should feel<br /><em>like its owner.</em></h2>
+    </div>
 
-  <div class="section-header">
-    <h2>Tech Stack</h2>
-    <p>Tools and technologies I use</p>
-  </div>
-
-  <div class="tech-grid">
-
-    <img src={`${import.meta.env.BASE_URL}images/Astro.svg`} />
-    <img src={`${import.meta.env.BASE_URL}images/React.svg`} />
-    <img src={`${import.meta.env.BASE_URL}images/Firebase.svg`} />
-    <img src={`${import.meta.env.BASE_URL}images/Python.svg`} />
-    <img src={`${import.meta.env.BASE_URL}images/MySQL.svg`} />
-    <img src={`${import.meta.env.BASE_URL}images/Node.js.svg`} />
-    <img src={`${import.meta.env.BASE_URL}images/HTML5.svg`} />
-    <img src={`${import.meta.env.BASE_URL}images/CSS3.svg`} />
-    <img src={`${import.meta.env.BASE_URL}images/JavaScript.svg`} />
-   <img src={`${import.meta.env.BASE_URL}images/Git.svg`} />
-    <img src={`${import.meta.env.BASE_URL}images/GitHub.svg`} />
-    <img src={`${import.meta.env.BASE_URL}images/Csharp.svg`} />
-
-
-  </div>
-
-</section>
-
-<!--Projects Section -->
-<section id="projects" class="projects reveal" data-bg="gray">
-  <div class="section-header">
-    <h2>Featured Projects</h2>
-    <p>Some of the things I've built</p>
-  </div>
-
-  <div class="projects-grid">
-
-    <!-- Project 1 -->
-    <div class="project-card">
-      <img src={`${import.meta.env.BASE_URL}images/blog.png`} />
-
-      <div class="project-content">
-        <h3>Blog Site</h3>
+    <div class="about-grid">
+      <div class="about-note glass-panel">
+        <div class="note-pin"></div>
+        <span class="note-label">A little note</span>
         <p>
-          a blog site created back in 2020, using html, css, js, and bootstrap to complete the website.
+          I’m the kind of person who can spend an afternoon fixing a tiny UI detail,
+          then lose an hour making a desktop setup look just right. I like technology,
+          but I care just as much about how it feels to use.
         </p>
-
-        <div class="tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JS</span>
-          <span>Bootstrap</span>
-        </div>
-
-        <div class="links">
-          <a href="https://github.com/Dous13/Zidousblog.github.io" target="_blank">GitHub</a>
-          <a href="https://dous13.github.io/Zidousblog.github.io/index.html" target="_blank">Live Demo</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project-card">
-      <img src={`${import.meta.env.BASE_URL}images/laundryscience.png`} />
-
-      <div class="project-content">
-        <h3>Laundry Services Site</h3>
         <p>
-          Full Site for a small laundry business using HTML, CSS, JS, Bootstrap, and Composer
+          My work sits somewhere between software development, design, and creative
+          editing. I enjoy learning by making — especially when the result solves a
+          real problem or makes someone's day a little easier.
         </p>
-
-        <div class="tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>Bootstrap</span>
-          <span>JS</span>
-          <span>Composer</span>
-        </div>
-
-        <div class="links">
-          <a href="https://github.com/Dous13/TheLaundryScience" target="_blank">GitHub</a>
-          <a href="https://dous13.github.io/TheLaundryScience/" target="_blank">Live Demo</a>
+        <div class="about-tags">
+          <span>Web Development</span>
+          <span>UI/UX</span>
+          <span>Creative Editing</span>
+          <span>Problem Solving</span>
+          <span>Tech</span>
         </div>
       </div>
-    </div>
 
-    <!-- Project 3 -->
-    <div class="project-card">
-      <img src={`${import.meta.env.BASE_URL}images/adoption.png`} />
-
-      <div class="project-content">
-        <h3>Animal Sanctuary Based Site</h3>
-        <p>
-          Full Website for a small animal sanctuary using HMLT, CSS, JS, Firebase and SCSS
-        </p>
-
-        <div class="tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JS</span>
-          <span>Firebase</span>
-          <span>SCSS</span>
+      <div class="about-side">
+        <div class="quote-card glass-panel">
+          <span class="quote-mark">“</span>
+          <p>Build it well.<br />Make it feel good.<br />Keep it human.</p>
         </div>
-
-        <div class="links">
-          <a href="https://github.com/Dous13/AnimalSanctuary.github.io" target="_blank">GitHub</a>
-          <a href="https://dous13.github.io/AnimalSanctuary.github.io/index.html" target="_blank">Live Demo</a>
+        <div class="mini-stats">
+          <div class="stat glass-panel"><strong>CS</strong><span>Student</span></div>
+          <div class="stat glass-panel"><strong>Web</strong><span>Focus</span></div>
+          <div class="stat glass-panel"><strong>UI</strong><span>Mindset</span></div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Project 5 -->
-    <div class="project-card">
-      <img src={`${import.meta.env.BASE_URL}images/sucommunityapp.jpg`} />
+  <section class="section tech-stack reveal">
+    <div class="section-intro centered">
+      <span class="section-number">02 / TOOLBOX</span>
+      <h2>Things I like <em>building with.</em></h2>
+      <p>My current stack, from code to creative work.</p>
+    </div>
 
-      <div class="project-content">
-        <h3>School Community App</h3>
-        <p>
-          Mobile School Community App with messaging, ordering, renting, and front page functions using React Native, Firebase, JS, and Node.js
-        </p>
+    <div class="tech-grid glass-panel">
+      <div class="tech-item"><img src={`${import.meta.env.BASE_URL}images/Astro.svg`} alt="Astro" /><span>Astro</span></div>
+      <div class="tech-item"><img src={`${import.meta.env.BASE_URL}images/React.svg`} alt="React" /><span>React</span></div>
+      <div class="tech-item"><img src={`${import.meta.env.BASE_URL}images/Firebase.svg`} alt="Firebase" /><span>Firebase</span></div>
+      <div class="tech-item"><img src={`${import.meta.env.BASE_URL}images/Python.svg`} alt="Python" /><span>Python</span></div>
+      <div class="tech-item"><img src={`${import.meta.env.BASE_URL}images/MySQL.svg`} alt="MySQL" /><span>MySQL</span></div>
+      <div class="tech-item"><img src={`${import.meta.env.BASE_URL}images/Node.js.svg`} alt="Node.js" /><span>Node.js</span></div>
+      <div class="tech-item"><img src={`${import.meta.env.BASE_URL}images/HTML5.svg`} alt="HTML5" /><span>HTML</span></div>
+      <div class="tech-item"><img src={`${import.meta.env.BASE_URL}images/CSS3.svg`} alt="CSS3" /><span>CSS</span></div>
+      <div class="tech-item"><img src={`${import.meta.env.BASE_URL}images/JavaScript.svg`} alt="JavaScript" /><span>JavaScript</span></div>
+      <div class="tech-item"><img src={`${import.meta.env.BASE_URL}images/Git.svg`} alt="Git" /><span>Git</span></div>
+      <div class="tech-item"><img src={`${import.meta.env.BASE_URL}images/GitHub.svg`} alt="GitHub" /><span>GitHub</span></div>
+      <div class="tech-item"><img src={`${import.meta.env.BASE_URL}images/Csharp.svg`} alt="C Sharp" /><span>C#</span></div>
+    </div>
+  </section>
 
-        <div class="tags">
-          <span>React Native</span>
-          <span>Firebase</span>
-          <span>JS</span>
-          <span>Node.js</span>
+  <section id="projects" class="section projects reveal">
+    <div class="section-intro">
+      <span class="section-number">03 / SELECTED WORK</span>
+      <h2>Things I've <em>made.</em></h2>
+      <p>A mix of school projects, experiments, and real-world builds.</p>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project-card glass-panel featured">
+        <div class="project-window-bar">
+          <div class="window-controls" aria-hidden="true"><span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span></div>
+          <span>01 — web / 2020</span>
+        </div>
+        <img src={`${import.meta.env.BASE_URL}images/blog.png`} alt="Blog site project preview" />
+        <div class="project-content">
+          <div class="project-kicker">First experiments</div>
+          <h3>Blog Site</h3>
+          <p>A personal blog built with HTML, CSS, JavaScript, and Bootstrap — one of my early steps into web development.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span><span>Bootstrap</span></div>
+          <div class="links"><a href="https://github.com/Dous13/Zidousblog.github.io" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://dous13.github.io/Zidousblog.github.io/index.html" target="_blank" rel="noreferrer">Live Demo ↗</a></div>
+        </div>
+      </article>
+
+      <article class="project-card glass-panel">
+        <div class="project-window-bar">
+          <div class="window-controls" aria-hidden="true"><span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span></div>
+          <span>02 — business</span>
+        </div>
+        <img src={`${import.meta.env.BASE_URL}images/laundryscience.png`} alt="Laundry services website preview" />
+        <div class="project-content">
+          <div class="project-kicker">Small business</div>
+          <h3>Laundry Services Site</h3>
+          <p>A complete site for a local laundry business using HTML, CSS, JavaScript, Bootstrap, and Composer.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span><span>Bootstrap</span></div>
+          <div class="links"><a href="https://github.com/Dous13/TheLaundryScience" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://dous13.github.io/TheLaundryScience/" target="_blank" rel="noreferrer">Live Demo ↗</a></div>
+        </div>
+      </article>
+
+      <article class="project-card glass-panel">
+        <div class="project-window-bar">
+          <div class="window-controls" aria-hidden="true"><span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span></div>
+          <span>03 — community</span>
+        </div>
+        <img src={`${import.meta.env.BASE_URL}images/sucommunityapp.jpg`} alt="School community app preview" />
+        <div class="project-content">
+          <div class="project-kicker">Mobile app</div>
+          <h3>School Community App</h3>
+          <p>A React Native community app with messaging, ordering, renting, and a campus-focused front page.</p>
+          <div class="tags"><span>React Native</span><span>Firebase</span><span>Node.js</span></div>
+          <div class="links"><a href="https://github.com/Dous13/sucommunityapp" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+        </div>
+      </article>
+
+      <article class="project-card glass-panel">
+        <div class="project-window-bar">
+          <div class="window-controls" aria-hidden="true"><span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span></div>
+          <span>04 — social impact</span>
+        </div>
+        <img src={`${import.meta.env.BASE_URL}images/adoption.png`} alt="Animal sanctuary website preview" />
+        <div class="project-content">
+          <div class="project-kicker">Cause-driven</div>
+          <h3>Animal Sanctuary Site</h3>
+          <p>A sanctuary website designed around adoption, information, and a warmer visual experience.</p>
+          <div class="tags"><span>HTML</span><span>SCSS</span><span>JS</span><span>Firebase</span></div>
+          <div class="links"><a href="https://github.com/Dous13/AnimalSanctuary.github.io" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://dous13.github.io/AnimalSanctuary.github.io/index.html" target="_blank" rel="noreferrer">Live Demo ↗</a></div>
+        </div>
+      </article>
+
+      <article class="project-card glass-panel">
+        <div class="project-window-bar">
+          <div class="window-controls" aria-hidden="true"><span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span></div>
+          <span>05 — experiment</span>
+        </div>
+        <img src={`${import.meta.env.BASE_URL}images/shopme.png`} alt="Shopping web app preview" />
+        <div class="project-content">
+          <div class="project-kicker">School project</div>
+          <h3>Shopping Web App</h3>
+          <p>A lightweight Shopee-inspired shopping interface made for a short school project.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <div class="links"><a href="https://github.com/Dous13/Shopme.github.io" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://dous13.github.io/Shopme.github.io/" target="_blank" rel="noreferrer">Live Demo ↗</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills" class="section skills reveal">
+    <div class="section-intro centered">
+      <span class="section-number">04 / WHAT I DO</span>
+      <h2>More than <em>just code.</em></h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card glass-panel"><span class="skill-icon">⌘</span><h3>Web Development</h3><p>Responsive websites, frontend interfaces, APIs, databases, and practical web experiences.</p><div class="skill-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span></div></div>
+      <div class="skill-card glass-panel"><span class="skill-icon">✦</span><h3>UI / UX Design</h3><p>Layouts, visual systems, prototypes, and interfaces designed around clarity and ease of use.</p><div class="skill-list"><span>Figma</span><span>UI/UX</span><span>Canva</span><span>Prototyping</span></div></div>
+      <div class="skill-card glass-panel"><span class="skill-icon">◉</span><h3>Photo & Video</h3><p>Editing and visual storytelling when the project needs something beyond the browser.</p><div class="skill-list"><span>Photoshop</span><span>Premiere Pro</span><span>Final Cut</span><span>DaVinci</span></div></div>
+      <div class="skill-card glass-panel"><span class="skill-icon">⚙</span><h3>Tech & Hardware</h3><p>PC building, diagnostics, troubleshooting, and the occasional obsession over a clean setup.</p><div class="skill-list"><span>PC Building</span><span>Diagnostics</span><span>Troubleshooting</span></div></div>
+    </div>
+  </section>
+
+  <section id="certificates" class="section gallery-section reveal">
+    <div class="section-intro">
+      <span class="section-number">05 / MILESTONES</span>
+      <h2>Things I've <em>learned.</em></h2>
+      <p>A few certificates and milestones from the journey so far.</p>
+    </div>
+
+    <div class="certificate-wall">
+      <div class="certificate-card large"><img src={`${import.meta.env.BASE_URL}images/certificates/1.jpg`} alt="Certificate 1" /></div>
+      <div class="certificate-card"><img src={`${import.meta.env.BASE_URL}images/certificates/2.jpg`} alt="Certificate 2" /></div>
+      <div class="certificate-card tall"><img src={`${import.meta.env.BASE_URL}images/certificates/3.jpg`} alt="Certificate 3" /></div>
+      <div class="certificate-card"><img src={`${import.meta.env.BASE_URL}images/certificates/4.jpg`} alt="Certificate 4" /></div>
+      <div class="certificate-card"><img src={`${import.meta.env.BASE_URL}images/certificates/5.jpg`} alt="Certificate 5" /></div>
+      <div class="certificate-card"><img src={`${import.meta.env.BASE_URL}images/certificates/6.jpg`} alt="Certificate 6" /></div>
+    </div>
+  </section>
+
+  <section id="photos" class="section life reveal">
+    <div class="section-intro centered">
+      <span class="section-number">06 / OFF THE SCREEN</span>
+      <h2>A little bit of <em>real life.</em></h2>
+      <p>The hobbies, places, and little things that make the work feel like mine.</p>
+    </div>
+
+    <div class="life-grid">
+      <article class="life-card large glass-panel"><img src={`${import.meta.env.BASE_URL}images/sky.jpeg`} alt="Dumaguete skyline during sunset" /><div class="photo-info"><span>PLACE</span><h3>Golden Hour</h3><p>Dumaguete skyline during sunset.</p></div></article>
+      <article class="life-card glass-panel"><img src={`${import.meta.env.BASE_URL}images/setup.jpeg`} alt="Aldous computer setup" /><div class="photo-info"><span>SETUP</span><h3>The Machine</h3><p>The setup that does a little bit of everything.</p></div></article>
+      <article class="life-card tall glass-panel"><img src={`${import.meta.env.BASE_URL}images/keeb.jpeg`} alt="Mechanical keyboard" /><div class="photo-info"><span>HOBBY</span><h3>Keeb</h3><p>A calm hobby between projects.</p></div></article>
+      <article class="life-card glass-panel"><img src={`${import.meta.env.BASE_URL}images/reflections.jpeg`} alt="Reflections on water" /><div class="photo-info"><span>PHOTO</span><h3>Reflections</h3><p>Water + light symmetry.</p></div></article>
+      <article class="life-card glass-panel"><img src={`${import.meta.env.BASE_URL}images/dog.jpeg`} alt="Dog portrait" /><div class="photo-info"><span>LIFE</span><h3>Dog & Smile</h3><p>The important stuff.</p></div></article>
+      <article class="life-card glass-panel"><img src={`${import.meta.env.BASE_URL}images/time.jpeg`} alt="Time themed photograph" /><div class="photo-info"><span>THOUGHT</span><h3>Time</h3><p>Time is gold.</p></div></article>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact reveal">
+    <div class="contact-window glass-panel">
+      <div class="window-bar">
+        <div class="window-controls" aria-hidden="true"><span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span></div>
+        <span class="window-title">new_message — Aldous</span>
+        <span class="window-status">● online</span>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <span class="section-number">07 / CONTACT</span>
+          <h2>Let's make something<br /><em>worth opening.</em></h2>
+          <p>
+            Have a project, internship opportunity, freelance idea, or just want to
+            talk about tech? My inbox is open.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:jeanaldousnecesito@gmail.com">✉ Email me <span>↗</span></a>
+            <a href="https://github.com/Dous13" target="_blank" rel="noreferrer">⌘ GitHub <span>↗</span></a>
+            <a href="https://www.linkedin.com/in/jean-aldous-necesito-8b56a7285/" target="_blank" rel="noreferrer">in LinkedIn <span>↗</span></a>
+          </div>
         </div>
 
-        <div class="links">
-          <a href="https://github.com/Dous13/sucommunityapp">GitHub</a>
-        </div>
+        <form class="contact-form">
+          <label>Name<input name="name" type="text" placeholder="Your name" required /></label>
+          <label>Email<input name="email" type="email" placeholder="you@example.com" required /></label>
+          <label>Message<textarea name="message" placeholder="Tell me what you're building…" rows="5" required></textarea></label>
+          <button class="primary-btn magnetic" type="submit">Send message <span>↗</span></button>
+          <small>This opens your email client — no data is stored here.</small>
+        </form>
       </div>
     </div>
+  </section>
 
-    <div class="project-card">
-      <img src={`${import.meta.env.BASE_URL}images/shopme.png`} />
-
-      <div class="project-content">
-        <h3>Shopping Web App</h3>
-        <p>
-          Shopping Web App, similar to shopee using only HTML & CSS for a short school project
-        </p>
-
-        <div class="tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JS</span>
-          <span>Firebase</span>
-          <span>SCSS</span>
-        </div>
-
-        <div class="links">
-          <a href="https://github.com/Dous13/Shopme.github.io" target="_blank">GitHub</a>
-          <a href="https://dous13.github.io/Shopme.github.io/" target="_blank">Live Demo</a>
-        </div>
-      </div>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><span class="logo-mark">A</span><strong>Aldous.</strong></div>
+      <p>Built with curiosity, too many browser tabs, and a lot of care.</p>
+      <span>© 2026</span>
     </div>
-
-  </div>
-  
-</section>
-
-<!--Skills Section -->
-<section id="skills" class="skills reveal" data-bg="deepblue">
-
-  <div class="section-header">
-    <h2>Skills & Tools</h2>
-    <p>Technologies and tools I work with</p>
-  </div>
-
-  <div class="skills-grid">
-
-    <!-- Web Dev -->
-    <div class="skill-card">
-      <h3>Web Development</h3>
-      <div class="skill-list">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>PHP</span>
-        <span>MySQL</span>
-      </div>
-    </div>
-
-    <!-- Frameworks -->
-    <div class="skill-card">
-      <h3>Frameworks</h3>
-      <div class="skill-list">
-        <span>Astro</span>
-        <span>React</span>
-        <span>Node.js</span>
-        <span>Tailwind</span>
-      </div>
-    </div>
-
-    <!-- Design -->
-    <div class="skill-card">
-      <h3>Design</h3>
-      <div class="skill-list">
-        <span>Figma</span>
-        <span>UI/UX</span>
-        <span>Photoshop</span>
-        <span>Canva</span>
-      </div>
-    </div>
-
-    <!-- Media -->
-    <div class="skill-card">
-      <h3>Media & Editing</h3>
-      <div class="skill-list">
-        <span>Premiere Pro</span>
-        <span>Final Cut Pro</span>
-        <span>DaVinci Resolve</span>
-      </div>
-    </div>
-
-    <!-- Tech -->
-    <div class="skill-card">
-      <h3>Technical Skills</h3>
-      <div class="skill-list">
-        <span>PC Building</span>
-        <span>Hardware Diagnostics</span>
-        <span>Troubleshooting</span>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-<section id="photos" class="photos reveal" data-bg="gray">
-  <div class="section-header">
-    <h2>Certificates</h2>
-  </div>
-
-  <div class="photo-wall">
-
-    <div class="photo-card large">
-      <img src={`${import.meta.env.BASE_URL}images/certificates/1.jpg`} />
-    </div>
-
-    <div class="photo-card">
-      <img src={`${import.meta.env.BASE_URL}images/certificates/2.jpg`} />
-    </div>
-
-    <div class="photo-card tall">
-      <img src={`${import.meta.env.BASE_URL}images/certificates/3.jpg`} />
-    </div>
-
-    <div class="photo-card">
-      <img src={`${import.meta.env.BASE_URL}images/certificates/4.jpg`} />
-    </div>
-
-    <div class="photo-card">
-      <img src={`${import.meta.env.BASE_URL}images/certificates/5.jpg`} />
-    </div>
-
-    <div class="photo-card">
-      <img src={`${import.meta.env.BASE_URL}images/certificates/6.jpg`} />
-    </div>
-
-  </div>
-</section>
-
-<section id="photos" class="photos reveal" data-bg="gray">
-  <div class="section-header">
-    <h2>Photos & Hobbies</h2>
-    <p>Moments in Time</p>
-  </div>
-
-  <div class="photo-wall">
-
-    <div class="photo-card large">
-      <img src={`${import.meta.env.BASE_URL}images/sky.jpeg`} />
-      <div class="photo-info">
-        <h3>Golden Hour</h3>
-        <p>Dumaguete skyline during sunset</p>
-      </div>
-    </div>
-
-    <div class="photo-card">
-      <img src={`${import.meta.env.BASE_URL}images/setup.jpeg`} />
-      <div class="photo-info">
-        <h3>Setup</h3>
-        <p>The Machine the does it all</p>
-      </div>
-    </div>
-
-    <div class="photo-card tall">
-      <img src={`${import.meta.env.BASE_URL}images/keeb.jpeg`} />
-      <div class="photo-info">
-        <h3>Keeb</h3>
-        <p>A calm hobby</p>
-      </div>
-    </div>
-
-    <div class="photo-card">
-      <img src={`${import.meta.env.BASE_URL}images/reflections.jpeg`} />
-      <div class="photo-info">
-        <h3>Reflections</h3>
-        <p>Water + light symmetry</p>
-      </div>
-    </div>
-
-    <div class="photo-card">
-      <img src={`${import.meta.env.BASE_URL}images/dog.jpeg`} />
-      <div class="photo-info">
-        <h3>Dog</h3>
-        <p>Dog & Smile</p>
-      </div>
-    </div>
-
-    <div class="photo-card">
-      <img src={`${import.meta.env.BASE_URL}images/time.jpeg`} />
-      <div class="photo-info">
-        <h3>Time</h3>
-        <p>Time is Gold</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!--Contact Section -->
-<section id="contact" class="contact reveal" data-bg="cyan">
-
-  <div class="section-header">
-    <h2>Contact Me</h2>
-    <p>Let’s work together or build something cool</p>
-  </div>
-
-  <div class="contact-container">
-
-    <!-- Left Info -->
-    <div class="contact-info">
-
-      <h3>Get in Touch</h3>
-
-      <p>
-        I'm open to freelance work, internships, and collaboration opportunities.
-      </p>
-
-      <div class="contact-links">
-        <a href="mailto:jeanaldousnecesito@gmail.com">📧 Email Me</a>
-        <a href="https://github.com/Dous13" target="_blank">💻 GitHub</a>
-        <a href="https://www.linkedin.com/in/jean-aldous-necesito-8b56a7285/" target="_blank">🔗 LinkedIn</a>
-      </div>
-
-    </div>
-
-    <!-- Contact Form -->
-    <form class="contact-form">
-
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" rows="6" required></textarea>
-
-      <button type="submit">Send Message</button>
-
-    </form>
-
-  </div>
-
-</section>
-
-<footer class="footer reveal">
-
-  <div class="footer-content">
-    <h3>Aldous</h3>
-
-    <p>
-      Computer Science Major • Web Developer • UI/UX Designer • Photo & Video Editor • Tech Enthusiast
-    </p>
-
-    <div class="footer-links">
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-
-    <p class="copyright">
-      © 2026 Aldous. All rights reserved. Built with Care
-    </p>
-  </div>
-
-</footer>
+  </footer>
 
 </BaseLayout>

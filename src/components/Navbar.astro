@@ -1,11 +1,18 @@
 ---
-
 ---
 
-<nav class="navbar">
-  <div class="nav-container">
+<nav class="navbar" aria-label="Main navigation">
+  <div class="nav-shell glass-panel">
+    <div class="window-controls" aria-hidden="true">
+      <span class="traffic red"></span>
+      <span class="traffic yellow"></span>
+      <span class="traffic green"></span>
+    </div>
 
-    <div class="logo">Aldous.</div>
+    <a class="logo" href="#home" data-scroll="home" aria-label="Aldous home">
+      <span class="logo-mark">A</span>
+      <span>Aldous</span>
+    </a>
 
     <div class="nav-right">
       <ul class="nav-links">
@@ -13,14 +20,16 @@
         <li><a href="#about" data-scroll="about">About</a></li>
         <li><a href="#projects" data-scroll="projects">Projects</a></li>
         <li><a href="#skills" data-scroll="skills">Skills</a></li>
-        <li><a href="#photos" data-scroll="photos">Photos</a></li>
-        <li><a href="#contact" data-scroll="contact">Contact</a></li>
+        <li><a href="#certificates" data-scroll="certificates">Certificates</a></li>
+        <li><a href="#photos" data-scroll="photos">Life</a></li>
       </ul>
 
-      <a class="resume-btn" href="/resume.pdf" target="_blank">
-        Resume
+      <a class="resume-btn magnetic" href="/resume.pdf" target="_blank" rel="noreferrer">
+        <span>Resume</span>
+        <span class="arrow">↗</span>
       </a>
     </div>
 
+    <button class="mobile-menu" type="button" aria-label="Open navigation">☰</button>
   </div>
 </nav>

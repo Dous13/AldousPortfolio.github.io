@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar.astro";
 
 const { title = "Aldous | Portfolio" } = Astro.props;
 ---
+<div class="site-loader" id="siteLoader" aria-label="Loading portfolio"><div class="loader-mark"><div class="loader-orb"></div><div class="loader-name">Aldous</div><div class="loader-line"></div></div></div><div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -240,3 +242,135 @@ const { title = "Aldous | Portfolio" } = Astro.props;
     </script>
   </body>
 </html>
+
+<script is:inline>
+(() => { const loader=document.getElementById('siteLoader'); if(!loader)return; const hide=()=>loader.classList.add('is-hidden'); if(document.readyState==='complete') setTimeout(hide,350); else window.addEventListener('load',()=>setTimeout(hide,350),{once:true}); setTimeout(hide,1500); })();
+(() => { const overlay=document.getElementById('pageTransition'); if(!overlay)return; document.querySelectorAll('.nav-link[href^="#"]').forEach(link=>link.addEventListener('click',()=>{const r=link.getBoundingClientRect(); overlay.style.setProperty('--transition-x',`${r.left+r.width/2}px`); overlay.style.setProperty('--transition-y',`${r.top+r.height/2}px`); link.classList.remove('nav-pulse'); void link.offsetWidth; link.classList.add('nav-pulse'); overlay.classList.add('active'); setTimeout(()=>overlay.classList.remove('active'),500);})); })();
+
+
+// Clean pointer-following 3D card tilt.
+(() => {
+  if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  document.querySelectorAll(
+    '.project-card, .skill-card, .life-card, .tech-card, .profile-card'
+  ).forEach(card => {
+    let raf = 0;
+    let tx = 0, ty = 0, cx = 0, cy = 0;
+
+    const draw = () => {
+      cx += (tx - cx) * .16;
+      cy += (ty - cy) * .16;
+      card.style.setProperty('--tilt-x', `${cx.toFixed(2)}deg`);
+      card.style.setProperty('--tilt-y', `${cy.toFixed(2)}deg`);
+      if (Math.abs(tx-cx) > .01 || Math.abs(ty-cy) > .01) {
+        raf = requestAnimationFrame(draw);
+      } else raf = 0;
+    };
+
+    card.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;
+      const y = (e.clientY - r.top) / r.height;
+
+      // Maximum ~7 degrees: noticeable, but still Apple-like.
+      tx = (.5 - y) * 7;
+      ty = (x - .5) * 7;
+
+      card.style.setProperty('--mx', `${x * 100}%`);
+      card.style.setProperty('--my', `${y * 100}%`);
+
+      if (!raf) raf = requestAnimationFrame(draw);
+    });
+
+    card.addEventListener('pointerleave', () => {
+      tx = 0;
+      ty = 0;
+      card.style.setProperty('--mx', '50%');
+      card.style.setProperty('--my', '50%');
+      if (!raf) raf = requestAnimationFrame(draw);
+    });
+  });
+})();
+
+// Lightweight scroll parallax.
+// Only selected elements move; the document itself remains normal and crisp.
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const items = [
+    ...document.querySelectorAll('.hero-window, .profile-card, .section-heading, [data-parallax]')
+  ];
+
+  if (!items.length) return;
+
+  let ticking = false;
+
+  const update = () => {
+    const vh = window.innerHeight;
+
+    items.forEach((el, i) => {
+      const r = el.getBoundingClientRect();
+      if (r.bottom < -120 || r.top > vh + 120) return;
+
+      const center = r.top + r.height / 2;
+      const distance = (center - vh / 2) / vh;
+
+      // Different layers move at different speeds.
+      const strength = el.hasAttribute('data-parallax')
+        ? parseFloat(el.dataset.parallax || '0.10')
+        : (i % 3 === 0 ? 0.045 : 0.025);
+
+      const y = distance * strength * -70;
+      el.style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
+    });
+
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+  update();
+})();
+
+// Navbar navigation: no overlay and no instant hash jump.
+// We smoothly scroll to the target with the navbar offset, then update the hash.
+(() => {
+  document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const href = link.getAttribute('href');
+      const target = href ? document.querySelector(href) : null;
+      if (!target) return;
+
+      e.preventDefault();
+
+      const header = document.querySelector('.navbar, nav');
+      const offset = header ? header.getBoundingClientRect().height + 18 : 92;
+      const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - offset);
+
+      // Tiny click feedback, without covering or blurring the page.
+      link.classList.remove('nav-pulse');
+      void link.offsetWidth;
+      link.classList.add('nav-pulse');
+
+      window.scrollTo({
+        top,
+        behavior: 'smooth'
+      });
+
+      // Update the URL after the smooth scroll starts so the browser
+      // doesn't perform its own second jump.
+      history.replaceState(null, '', href);
+    });
+  });
+})();
+
+</script>

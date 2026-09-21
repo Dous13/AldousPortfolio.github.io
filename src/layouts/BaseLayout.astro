@@ -145,29 +145,6 @@ const { title = "Aldous | Portfolio" } = Astro.props;
           animateGlow();
         }
 
-        document.querySelectorAll(".project-card, .life-card, .skill-card").forEach((card) => {
-          card.addEventListener("pointermove", (e) => {
-            if (reduceMotion || window.innerWidth < 900) return;
-            const rect = card.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width;
-            const y = (e.clientY - rect.top) / rect.height;
-            card.style.setProperty("--shine-x", `${x * 100}%`);
-            card.style.setProperty("--shine-y", `${y * 100}%`);
-            card.style.setProperty("--rx", `${(0.5 - y) * 5}deg`);
-            card.style.setProperty("--ry", `${(x - 0.5) * 5}deg`);
-            card.style.setProperty("--mx", `${x * 100}%`);
-            card.style.setProperty("--my", `${y * 100}%`);
-          });
-          card.addEventListener("pointerleave", () => {
-            card.style.removeProperty("--rx");
-            card.style.removeProperty("--ry");
-            card.style.removeProperty("--shine-x");
-            card.style.removeProperty("--shine-y");
-          });
-        });
-
-
-
         const heroWindow = document.querySelector(".hero-window");
         if (!reduceMotion && heroWindow) {
           document.addEventListener("mousemove", (e) => {
@@ -248,13 +225,13 @@ const { title = "Aldous | Portfolio" } = Astro.props;
 (() => { const overlay=document.getElementById('pageTransition'); if(!overlay)return; document.querySelectorAll('.nav-link[href^="#"]').forEach(link=>link.addEventListener('click',()=>{const r=link.getBoundingClientRect(); overlay.style.setProperty('--transition-x',`${r.left+r.width/2}px`); overlay.style.setProperty('--transition-y',`${r.top+r.height/2}px`); link.classList.remove('nav-pulse'); void link.offsetWidth; link.classList.add('nav-pulse'); overlay.classList.add('active'); setTimeout(()=>overlay.classList.remove('active'),500);})); })();
 
 
-// Clean pointer-following 3D card tilt.
+// Pointer-following 3D card tilt + shine highlight (one listener per card).
 (() => {
   if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   document.querySelectorAll(
-    '.project-card, .skill-card, .life-card, .tech-card, .profile-card'
+    '.project-card, .skill-card, .life-card'
   ).forEach(card => {
     let raf = 0;
     let tx = 0, ty = 0, cx = 0, cy = 0;
@@ -280,6 +257,8 @@ const { title = "Aldous | Portfolio" } = Astro.props;
 
       card.style.setProperty('--mx', `${x * 100}%`);
       card.style.setProperty('--my', `${y * 100}%`);
+      card.style.setProperty('--shine-x', `${x * 100}%`);
+      card.style.setProperty('--shine-y', `${y * 100}%`);
 
       if (!raf) raf = requestAnimationFrame(draw);
     });
@@ -289,6 +268,8 @@ const { title = "Aldous | Portfolio" } = Astro.props;
       ty = 0;
       card.style.setProperty('--mx', '50%');
       card.style.setProperty('--my', '50%');
+      card.style.setProperty('--shine-x', '50%');
+      card.style.setProperty('--shine-y', '50%');
       if (!raf) raf = requestAnimationFrame(draw);
     });
   });

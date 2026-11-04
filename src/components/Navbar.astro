@@ -1,3 +1,4 @@
+
 <nav class="navbar" aria-label="Main navigation">
   <div class="nav-shell glass-panel">
     <div class="window-controls" aria-hidden="true">
@@ -6,29 +7,77 @@
       <span class="traffic green"></span>
     </div>
 
-    <div class="nav-container">
-      <a class="logo" href="#home" data-scroll="home" aria-label="Aldous home">
-        <span class="logo-mark">A</span>
-        <span>Aldous</span>
+    <a class="logo" href="#home" data-scroll="home"
+       aria-label="Aldous home">
+      <span class="logo-mark">A</span>
+      <span class="logo-name">Aldous</span>
+    </a>
+
+    <div class="nav-right" id="primary-navigation">
+      <ul class="nav-links">
+        <li><a href="#home" data-scroll="home">Home</a></li>
+        <li><a href="#about" data-scroll="about">About</a></li>
+        <li><a href="#projects" data-scroll="projects">Projects</a></li>
+        <li><a href="#skills" data-scroll="skills">Skills</a></li>
+        <li><a href="#certificates" data-scroll="certificates">Certificates</a></li>
+        <li><a href="#photos" data-scroll="photos">Life</a></li>
+      </ul>
+
+      <a class="resume-btn"
+         href={`${import.meta.env.BASE_URL}resume/resume.pdf`}
+         target="_blank"
+         rel="noopener noreferrer">
+        Resume
+        <span class="arrow" aria-hidden="true">↗</span>
       </a>
-
-      <div class="nav-right">
-        <ul class="nav-links">
-          <li><a href="#home" data-scroll="home">Home</a></li>
-          <li><a href="#about" data-scroll="about">About</a></li>
-          <li><a href="#projects" data-scroll="projects">Projects</a></li>
-          <li><a href="#skills" data-scroll="skills">Skills</a></li>
-          <li><a href="#certificates" data-scroll="certificates">Certificates</a></li>
-          <li><a href="#photos" data-scroll="photos">Life</a></li>
-        </ul>
-
-        <a class="resume-btn magnetic" href="/resume.pdf" target="_blank" rel="noreferrer">
-          <span>Resume</span>
-          <span class="arrow">↗</span>
-        </a>
-      </div>
-
-      <button class="mobile-menu" type="button" aria-label="Open navigation">☰</button>
     </div>
+
+    <button
+      class="mobile-menu"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="primary-navigation">
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </nav>
+
+<script>
+  const menuButton = document.querySelector('.mobile-menu');
+  const navigation = document.querySelector('.nav-right');
+
+  if (menuButton && navigation) {
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute(
+        'aria-label',
+        isOpen ? 'Open navigation' : 'Close navigation'
+      );
+
+      navigation.classList.toggle('is-open', !isOpen);
+    });
+
+    navigation.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navigation.classList.remove('is-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation');
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (
+        !navigation.contains(event.target as Node) &&
+        !menuButton.contains(event.target as Node)
+      ) {
+        navigation.classList.remove('is-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation');
+      }
+    });
+  }
+</script>
